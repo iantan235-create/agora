@@ -1,0 +1,2596 @@
+:root {
+    --primary: #2563eb;
+    --background: #f7f8fb;
+    --surface: #ffffff;
+    --text: #111827;
+    --secondary: #64748b;
+    --border: #e5e7eb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header */
+
+.site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    font-size: 28px;
+    font-weight: 750;
+    letter-spacing: -1.5px;
+}
+
+.brand span {
+    color: var(--primary);
+}
+
+.logout {
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.logout:hover {
+    color: var(--primary);
+}
+
+/* Welcome Section */
+
+.hero {
+    padding: 72px 0 48px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+    margin: 14px 0;
+}
+
+.hero p {
+    color: var(--secondary);
+    font-size: 16px;
+    max-width: 600px;
+}
+
+/* Dashboard */
+
+.section-title {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-bottom: 80px;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 205px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;
+    transition: transform 0.2s,
+                box-shadow 0.2s,
+                border-color 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: #bfdbfe;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.feature-card:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.card-number {
+    width: 42px;
+    height: 42px;
+    background: #eff6ff;
+    color: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+.feature-card p {
+    color: var(--secondary);
+    font-size: 14px;
+    margin: 0;
+}
+
+.card-arrow {
+    color: var(--primary);
+    margin-top: auto;
+    padding-top: 16px;
+    font-weight: 600;
+}
+
+/* Footer */
+
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+    color: var(--secondary);
+    font-size: 13px;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 48px 0 32px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        min-height: 180px;
+    }
+}
+
+/* Browse Events Page */
+
+.page-hero {
+    padding: 56px 0 32px;
+}
+
+.page-hero h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 10px 0;
+}
+
+.page-hero p {
+    color: var(--secondary);
+    margin: 0;
+}
+
+.filter-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;
+    margin-bottom: 40px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    font: inherit;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.form-control:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 20px;
+    background: var(--primary);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 16px;
+    min-height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.event-link:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.results-header h2 {
+    margin: 0;
+    font-size: 23px;
+}
+
+.results-count {
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;
+}
+
+.event-card h3 {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: -0.4px;
+}
+
+.event-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.event-date {
+    font-size: 13px;
+    color: var(--secondary);
+}
+
+.status-badge {
+    display: inline-block;
+    border-radius: 99px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status-active {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.status-cancelled {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.event-meta {
+    color: var(--secondary);
+    font-size: 14px;
+    margin: 0;
+}
+
+.event-link {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+.event-link:hover {
+    text-decoration: underline;
+}
+
+.empty-state {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 48px 24px;
+    text-align: center;
+    margin-bottom: 80px;
+    color: var(--secondary);
+}
+
+/* Responsive Event Layout */
+
+@media (max-width: 700px) {
+    .filter-grid,
+    .event-list {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-panel,
+    .event-card {
+        padding: 20px;
+    }
+
+    .filter-actions {
+        flex-wrap: wrap;
+    }
+
+    .page-hero {
+        padding-top: 36px;
+    }
+}
+
+
+/* ======================================
+   Event Details Page
+====================================== */
+
+.details-hero {
+    padding: 42px 0 30px;
+}
+
+.details-back {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.details-back:hover {
+    text-decoration: underline;
+}
+
+.details-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.details-heading h1 {
+    font-size: clamp(30px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.details-heading p {
+    color: var(--secondary);
+    margin: 0;
+}
+
+.details-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr)
+                           minmax(280px, 1fr);
+    gap: 24px;
+    align-items: start;
+    padding-bottom: 80px;
+}
+
+.details-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+
+.details-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.details-panel h2 {
+    font-size: 21px;
+    margin: 0 0 24px;
+    letter-spacing: -0.5px;
+}
+
+.details-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.details-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.details-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.details-value {
+    font-size: 15px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.details-description {
+    color: var(--secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.details-divider {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 28px 0;
+}
+
+.details-club-link {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.details-club-link:hover {
+    text-decoration: underline;
+}
+
+.registration-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+}
+
+.registration-panel h2 {
+    margin: 0 0 12px;
+    font-size: 21px;
+}
+
+.registration-panel p {
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.registration-action {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.registration-success {
+    background: #ecfdf5;
+    color: #047857;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.registration-cancelled {
+    background: #fef2f2;
+    color: #b91c1c;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.details-back:focus-visible,
+.details-club-link:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* Responsive Event Details */
+
+@media (max-width: 850px) {
+    .details-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .details-hero {
+        padding: 30px 0;
+    }
+
+    .details-heading {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .details-info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .details-panel,
+    .registration-panel {
+        padding: 22px;
+    }
+}
+
+
+/* =====================================
+   My Registrations Page
+===================================== */
+
+.registration-page {
+    padding: 50px 0 80px;
+}
+
+.registration-page h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.registration-intro {
+    color: var(--secondary);
+    margin-bottom: 32px;
+}
+
+.registration-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.registration-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;
+    min-width: 0;
+}
+
+.registration-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.registration-card h2 {
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.registration-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.registration-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.registration-meta-label {
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.registration-meta-value {
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.registration-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+}
+
+.registration-notice {
+    background: #fef2f2;
+    color: #b91c1c;
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.registration-muted {
+    color: var(--secondary);
+    font-size: 13px;
+}
+
+.registration-empty {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 50px 24px;
+    text-align: center;
+}
+
+.registration-empty p {
+    color: var(--secondary);
+}
+
+/* Responsive Registration Layout */
+
+@media (max-width: 800px) {
+    .registration-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .registration-card {
+        padding: 20px;
+    }
+
+    .registration-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-card-header {
+        flex-direction: column;
+    }
+}
+
+
+/* =====================================
+   Explore Clubs Page
+===================================== */
+
+.clubs-page {
+    padding: 50px 0 80px;
+}
+
+.clubs-page h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.clubs-intro {
+    color: var(--secondary);
+    max-width: 650px;
+    margin-bottom: 40px;
+}
+
+.clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.club-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 280px;
+    transition: transform 0.2s,
+                box-shadow 0.2s;
+}
+
+.club-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.club-avatar {
+    width: 54px;
+    height: 54px;
+    background: #eff6ff;
+    color: var(--primary);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.club-card h2 {
+    font-size: 20px;
+    margin: 4px 0 0;
+    letter-spacing: -0.5px;
+    overflow-wrap: anywhere;
+}
+
+.club-type {
+    font-size: 12px;
+    color: var(--secondary);
+    margin: 0;
+}
+
+.club-description {
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+}
+
+.club-card-link {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.club-card-link:hover {
+    text-decoration: underline;
+}
+
+.club-card-link:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.clubs-empty {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 50px 24px;
+    text-align: center;
+    color: var(--secondary);
+}
+
+/* Responsive Club Layout */
+
+@media (max-width: 950px) {
+    .clubs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .clubs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .club-card {
+        min-height: 240px;
+        padding: 22px;
+    }
+
+    .clubs-page {
+        padding-top: 35px;
+    }
+}
+
+
+/* =====================================
+   Individual Club Profile
+===================================== */
+
+.club-profile-page {
+    padding: 42px 0 80px;
+}
+
+.club-profile-back {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.club-profile-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr)
+                           minmax(280px, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.club-profile-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+
+.club-profile-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.club-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.club-profile-avatar {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: #eff6ff;
+    color: var(--primary);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.club-profile-header h1 {
+    font-size: clamp(26px, 4vw, 36px);
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin: 0 0 8px;
+    overflow-wrap: anywhere;
+}
+
+.club-profile-subtitle {
+    color: var(--secondary);
+    font-size: 14px;
+    margin: 0;
+}
+
+.club-profile-section {
+    margin-top: 28px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+}
+
+.club-profile-section h2 {
+    font-size: 19px;
+    margin: 0 0 14px;
+}
+
+.club-profile-description {
+    color: var(--secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.club-profile-email {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.club-follow-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+}
+
+.club-follow-panel h2 {
+    font-size: 21px;
+    margin: 0 0 14px;
+}
+
+.club-follow-panel p {
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.club-follow-form {
+    margin-top: 20px;
+}
+
+.club-follow-form button {
+    width: 100%;
+}
+
+.club-follow-panel .btn-secondary {
+    width: 100%;
+    justify-content: center;
+}
+
+.club-events-section {
+    margin-top: 42px;
+}
+
+.club-events-section h2 {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.club-events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.club-event-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.club-event-card h3 {
+    font-size: 18px;
+    margin: 14px 0;
+    overflow-wrap: anywhere;
+}
+
+.club-event-card p {
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.club-event-link {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+.club-event-link:hover,
+.club-profile-email:hover,
+.club-profile-back:hover {
+    text-decoration: underline;
+}
+
+.club-event-link:focus-visible,
+.club-profile-email:focus-visible,
+.club-profile-back:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 850px) {
+    .club-profile-layout,
+    .club-events-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .club-profile-panel,
+    .club-follow-panel {
+        padding: 22px;
+    }
+
+    .club-profile-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .club-profile-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
+
+    .club-profile-page {
+        padding-top: 30px;
+    }
+}
+
+
+/* =====================================
+   My Notifications Page
+===================================== */
+
+.notifications-page {
+    padding: 50px 0 80px;
+    max-width: 950px;
+}
+
+.notifications-page h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.notifications-intro {
+    color: var(--secondary);
+    margin-bottom: 30px;
+}
+
+.notifications-summary {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.notification-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.notification-unread {
+    border-color: #bfdbfe;
+    background: #fcfdff;
+}
+
+.notification-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 14px;
+}
+
+.notification-type {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.notification-danger {
+    color: #b91c1c;
+}
+
+.notification-warning {
+    color: #b45309;
+}
+
+.notification-status {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.notification-status-unread {
+    color: var(--primary);
+}
+
+.notification-message {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    margin-bottom: 16px;
+}
+
+.notification-date {
+    color: var(--secondary);
+    font-size: 12px;
+}
+
+.notification-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.notification-actions form {
+    margin: 0;
+}
+
+.notification-actions button {
+    cursor: pointer;
+    font: inherit;
+}
+
+.notification-empty {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 55px 25px;
+    text-align: center;
+}
+
+.notification-empty h2 {
+    margin-top: 0;
+}
+
+.notification-empty p {
+    color: var(--secondary);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .notifications-page {
+        padding-top: 35px;
+    }
+
+    .notification-card {
+        padding: 20px;
+    }
+
+    .notification-top {
+        align-items: flex-start;
+    }
+
+    .notification-actions {
+        flex-direction: column;
+    }
+
+    .notification-actions a,
+    .notification-actions button,
+    .notification-actions form {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+/* =====================================
+   Organizer - My Events Page
+===================================== */
+
+.organizer-events-page {
+    padding: 50px 0 80px;
+}
+
+.organizer-events-page h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.organizer-intro {
+    color: var(--secondary);
+    margin-bottom: 28px;
+}
+
+.organizer-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+/* Statistics */
+
+.organizer-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 38px;
+}
+
+.organizer-stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.organizer-stat-number {
+    font-size: 32px;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+.organizer-stat-label {
+    color: var(--secondary);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* Event Cards */
+
+.organizer-event-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.organizer-event-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    min-width: 0;
+}
+
+.organizer-event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.organizer-event-card h3 {
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.organizer-event-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.organizer-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.organizer-meta-label {
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.organizer-meta-value {
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.organizer-event-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding-top: 20px;
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+}
+
+.organizer-event-actions a {
+    text-align: center;
+    justify-content: center;
+}
+
+.organizer-danger-link {
+    color: #b91c1c;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.organizer-danger-link:hover {
+    text-decoration: underline;
+}
+
+.organizer-danger-link:focus-visible {
+    outline: 3px solid #b91c1c;
+    outline-offset: 3px;
+}
+
+.organizer-cancelled-note {
+    color: #b91c1c;
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Responsive Organizer Page */
+
+@media (max-width: 850px) {
+    .organizer-event-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .organizer-stats {
+        gap: 10px;
+    }
+
+    .organizer-stat-card {
+        padding: 14px;
+    }
+
+    .organizer-stat-number {
+        font-size: 25px;
+    }
+
+    .organizer-event-card {
+        padding: 20px;
+    }
+
+    .organizer-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) {
+    .organizer-event-meta,
+    .organizer-event-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================
+   Organizer Create / Edit Event Forms
+===================================== */
+
+.event-form-page {
+    max-width: 850px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.event-form-page h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.event-form-intro {
+    color: var(--secondary);
+    margin-bottom: 30px;
+}
+
+.event-form-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px;
+}
+
+.event-form-panel h2 {
+    font-size: 22px;
+    margin: 0 0 26px;
+}
+
+.event-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.event-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.event-form-grid > * {
+    min-width: 0;
+}
+
+.event-form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.event-form-help {
+    color: var(--secondary);
+    font-size: 12px;
+    margin: 0;
+}
+
+.event-form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.event-form-error {
+    color: #b91c1c;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.event-form-note {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+.event-form-back {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.event-form-back:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .event-form-page {
+        padding-top: 32px;
+    }
+
+    .event-form-panel {
+        padding: 22px;
+    }
+
+    .event-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-form-actions {
+        flex-direction: column;
+    }
+
+    .event-form-actions .btn-primary,
+    .event-form-actions .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* =====================================
+   Organizer - Participants & Attendance
+===================================== */
+
+.participants-page {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.participants-page h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.participants-intro {
+    color: var(--secondary);
+    margin-bottom: 30px;
+}
+
+.participant-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.participant-stat {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.participant-stat-number {
+    font-size: 30px;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+.participant-stat-label {
+    font-size: 12px;
+    color: var(--secondary);
+}
+
+.participant-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;
+}
+
+.participant-table-wrapper {
+    overflow-x: auto;
+}
+
+.participant-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 780px;
+}
+
+.participant-table th {
+    color: var(--secondary);
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.participant-table td {
+    padding: 18px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.participant-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.participant-name {
+    font-weight: 700;
+}
+
+.participant-email {
+    color: var(--secondary);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.attendance-form {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.attendance-select {
+    min-width: 120px;
+    padding: 9px 10px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: white;
+    font: inherit;
+    font-size: 13px;
+}
+
+.attendance-save {
+    background: var(--primary);
+    color: white;
+    border: 0;
+    border-radius: 9px;
+    padding: 10px 13px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.attendance-save:hover {
+    background: #1d4ed8;
+}
+
+.attendance-save:focus-visible,
+.attendance-select:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.attendance-present {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.attendance-absent {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.attendance-not-marked {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.participant-success {
+    background: #ecfdf5;
+    color: #047857;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.participant-error {
+    background: #fef2f2;
+    color: #b91c1c;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+    .participant-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .participants-page {
+        padding-top: 32px;
+    }
+
+    .participant-panel {
+        padding: 16px;
+    }
+
+    .participant-stat {
+        padding: 16px;
+    }
+}
+
+
+/* =====================================
+   Organizer - QR Code Check-in
+===================================== */
+
+.checkin-page {
+    max-width: 900px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.checkin-page h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.checkin-intro {
+    color: var(--secondary);
+    margin-bottom: 30px;
+}
+
+.checkin-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 24px;
+}
+
+.checkin-panel h2 {
+    font-size: 21px;
+    margin: 0 0 18px;
+}
+
+.checkin-panel p {
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.checkin-scanner {
+    width: 100%;
+    max-width: 560px;
+    margin: 24px auto;
+    overflow: hidden;
+}
+
+#qr-reader {
+    width: 100%;
+    overflow: hidden;
+}
+
+#qr-reader video,
+#qr-reader canvas,
+#qr-reader img {
+    max-width: 100%;
+}
+
+.checkin-instructions {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.checkin-success {
+    background: #ecfdf5;
+    color: #047857;
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.checkin-error {
+    background: #fef2f2;
+    color: #b91c1c;
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.checkin-warning {
+    background: #fffbeb;
+    color: #92400e;
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.checkin-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.checkin-actions button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.checkin-status {
+    color: var(--secondary);
+    font-size: 14px;
+    margin-top: 14px;
+}
+
+.checkin-alt {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;
+}
+
+.checkin-alt h2 {
+    font-size: 20px;
+    margin: 0 0 12px;
+}
+
+.checkin-alt p {
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .checkin-page {
+        padding-top: 32px;
+    }
+
+    .checkin-panel,
+    .checkin-alt {
+        padding: 20px;
+    }
+
+    .checkin-actions {
+        flex-direction: column;
+    }
+
+    .checkin-actions button,
+    .checkin-actions a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* =====================================
+   Organizer - Attendance Report
+===================================== */
+
+.report-page {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.report-page h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.report-intro {
+    color: var(--secondary);
+    margin-bottom: 32px;
+}
+
+.report-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.report-stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.report-stat-number {
+    font-size: 34px;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+.report-stat-label {
+    color: var(--secondary);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.report-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 24px;
+}
+
+.report-panel h2 {
+    font-size: 21px;
+    margin: 0 0 20px;
+}
+
+.report-percentage {
+    font-size: 48px;
+    font-weight: 750;
+    letter-spacing: -1.5px;
+    margin-bottom: 8px;
+}
+
+.report-progress {
+    height: 14px;
+    background: #e5e7eb;
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.report-progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 99px;
+}
+
+.report-caption {
+    color: var(--secondary);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.report-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.report-info-label {
+    display: block;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.report-info-value {
+    font-size: 15px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.report-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.report-cancelled {
+    background: #fef2f2;
+    color: #b91c1c;
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+    .report-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .report-page {
+        padding-top: 32px;
+    }
+
+    .report-panel {
+        padding: 22px;
+    }
+
+    .report-stat-card {
+        padding: 18px;
+    }
+
+    .report-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-actions {
+        flex-direction: column;
+    }
+
+    .report-actions a {
+        justify-content: center;
+    }
+}
+
+
+/* =====================================
+   Organizer - Edit Club Profile
+===================================== */
+
+.club-editor-identity {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.club-editor-avatar {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background: #eff6ff;
+    color: var(--primary);
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.club-editor-identity h2 {
+    font-size: 20px;
+    margin: 0 0 5px;
+}
+
+.club-editor-identity p {
+    color: var(--secondary);
+    font-size: 13px;
+    margin: 0;
+}
+
+.club-editor-readonly {
+    background: #f8fafc;
+    color: var(--secondary);
+    cursor: not-allowed;
+}
+
+.club-editor-success {
+    background: #ecfdf5;
+    color: #047857;
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.club-editor-note {
+    margin-top: 12px;
+    color: var(--secondary);
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .club-editor-identity {
+        align-items: flex-start;
+    }
+}
+
+
+
+/* =====================================
+   My Followed Clubs
+===================================== */
+
+.followed-clubs-page {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.followed-clubs-page h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.followed-clubs-intro {
+    color: var(--secondary);
+    margin-bottom: 32px;
+}
+
+.followed-date {
+    color: var(--secondary);
+    font-size: 12px;
+    margin: 0;
+}
+
+/* =====================================
+   Student Attendance QR Code
+===================================== */
+
+.student-qr-page {
+    max-width: 850px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.student-qr-page h1 {
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -1.5px;
+    margin: 12px 0;
+}
+
+.student-qr-intro {
+    color: var(--secondary);
+    margin-bottom: 30px;
+}
+
+.student-qr-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px;
+    text-align: center;
+}
+
+.student-qr-panel h2 {
+    font-size: 22px;
+    margin: 0 0 12px;
+}
+
+.student-qr-code-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 28px auto;
+}
+
+#student-qr-code img,
+#student-qr-code canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.student-qr-instructions {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 24px;
+}
+
+.student-qr-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    text-align: left;
+    margin-top: 28px;
+}
+
+.student-qr-detail-label {
+    display: block;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.student-qr-detail-value {
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.student-qr-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.student-qr-warning {
+    background: #fef2f2;
+    color: #b91c1c;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+    .followed-clubs-page,
+    .student-qr-page {
+        padding-top: 32px;
+    }
+
+    .student-qr-panel {
+        padding: 20px;
+    }
+
+    .student-qr-details {
+        grid-template-columns: 1fr;
+    }
+
+    .student-qr-code-box {
+        padding: 14px;
+    }
+
+    .student-qr-actions {
+        flex-direction: column;
+    }
+
+    .student-qr-actions a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* =====================================
+   Agora Authentication Pages
+===================================== */
+
+.auth-page {
+    padding-top: 55px;
+    padding-bottom: 70px;
+}
+
+.auth-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    min-height: 570px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+/* Left Information Panel */
+
+.auth-info {
+    background: linear-gradient(
+        145deg,
+        #2563eb,
+        #1d4ed8
+    );
+    padding: 45px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.auth-info-logo {
+    font-size: 32px;
+    font-weight: 750;
+    letter-spacing: -1.5px;
+}
+
+.auth-info h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin: 0 0 18px;
+}
+
+.auth-info p {
+    color: #dbeafe;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.auth-info-footer {
+    color: #dbeafe;
+    font-size: 13px;
+}
+
+/* Right Form Panel */
+
+.auth-form-area {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-form-area h1 {
+    font-size: 34px;
+    letter-spacing: -1px;
+    margin: 0 0 8px;
+}
+
+.auth-subtitle {
+    color: var(--secondary);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font: inherit;
+    font-size: 14px;
+    background: #fff;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px #dbeafe;
+}
+
+.auth-submit {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--primary);
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.auth-submit:hover {
+    background: #1d4ed8;
+}
+
+.auth-submit:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+.auth-divider {
+    border-top: 1px solid var(--border);
+    margin: 28px 0 20px;
+}
+
+.auth-signup-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.auth-signup-links a {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.auth-signup-links a:hover {
+    text-decoration: underline;
+}
+
+.auth-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.auth-notice {
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.auth-helper {
+    color: var(--secondary);
+    font-size: 13px;
+    margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+    .auth-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-info {
+        padding: 30px;
+        gap: 16px;
+    }
+
+    .auth-info h2 {
+        font-size: 25px;
+    }
+
+    .auth-info-footer {
+        display: none;
+    }
+
+    .auth-form-area {
+        padding: 35px;
+    }
+}
+
+@media (max-width: 500px) {
+    .auth-page {
+        padding-top: 24px;
+    }
+
+    .auth-info,
+    .auth-form-area {
+        padding: 24px;
+    }
+
+    .auth-form-area h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* =====================================
+   Student and Organizer Sign-up Forms
+===================================== */
+
+.auth-signup-page {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.auth-signup-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+.auth-signup-layout .auth-info {
+    min-height: 650px;
+}
+
+.auth-signup-layout .auth-form-area {
+    padding: 45px;
+}
+
+.auth-signup-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.auth-signup-grid > div {
+    min-width: 0;
+}
+
+.auth-full-width {
+    grid-column: 1 / -1;
+}
+
+.auth-password-hint {
+    color: var(--secondary);
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.auth-bottom-link {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 14px;
+    margin-top: 24px;
+}
+
+.auth-bottom-link a {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.auth-bottom-link a:hover {
+    text-decoration: underline;
+}
+
+.auth-required {
+    color: #dc2626;
+}
+
+.auth-form input[aria-invalid="true"] {
+    border-color: #dc2626;
+}
+
+@media (max-width: 850px) {
+    .auth-signup-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-signup-layout .auth-info {
+        min-height: 0;
+    }
+
+    .auth-signup-layout .auth-form-area {
+        padding: 35px;
+    }
+}
+
+@media (max-width: 550px) {
+    .auth-signup-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-signup-layout .auth-form-area {
+        padding: 24px;
+    }
+}
+
